@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Count</string>
+    <string name="reset">重置</string>
+    <string name="start">开始</string>
+    <string name="pause">暂停</string>
+    <string name="resume">继续</string>
+    <string name="ding">叮</string>
+    <string name="ling">00</string>
+    <string name="maohao">:</string>
+    <string name="both">两者</string>
+    <string name="jishuqi">计数器</string>
+    <string name="time">时间</string>
+</resources>

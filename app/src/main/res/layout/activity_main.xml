@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.wong.count.MainActivity">
+
+
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="1"
+        app:layout_constraintBottom_toTopOf="@+id/textView"
+        app:layout_constraintTop_toTopOf="parent"
+        android:id="@+id/linearLayout"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent">
+
+        <TextView
+            android:id="@+id/hour"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical|center_horizontal"
+            android:text="@string/ling"
+            android:textSize="@android:dimen/app_icon_size"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="51dp" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical|center_horizontal"
+            android:text="@string/maohao"
+            android:textSize="@android:dimen/app_icon_size"
+            tools:layout_editor_absoluteX="70dp"
+            tools:layout_editor_absoluteY="51dp" />
+
+        <TextView
+            android:id="@+id/minute"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/ling"
+            android:textSize="@android:dimen/app_icon_size"
+            tools:layout_editor_absoluteX="87dp"
+            tools:layout_editor_absoluteY="51dp" />
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical|center_horizontal"
+            android:text="@string/maohao"
+            android:textSize="@android:dimen/app_icon_size"
+            tools:layout_editor_absoluteX="146dp"
+            tools:layout_editor_absoluteY="47dp" />
+
+        <TextView
+            android:id="@+id/second"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/ling"
+            android:textSize="@android:dimen/app_icon_size"
+            tools:layout_editor_absoluteX="155dp"
+            tools:layout_editor_absoluteY="51dp" />
+
+        <TextView
+            android:id="@+id/msec"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/ling"
+            tools:layout_editor_absoluteX="227dp"
+            tools:layout_editor_absoluteY="85dp" />
+
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/textView"
+        android:textSize="@android:dimen/app_icon_size"
+        android:layout_width="150dp"
+        android:layout_height="70dp"
+        android:background="@drawable/textview_background"
+        android:gravity="center_vertical|center"
+        app:layout_constraintBottom_toTopOf="@+id/dingBtn"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+    <Button
+        android:id="@+id/dingBtn"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:background="@drawable/button_background"
+        android:text="@string/ding"
+        android:textSize="40sp"
+        android:textColor="@android:color/white"
+        app:layout_constraintBottom_toTopOf="@+id/textView9"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="395dp"
+        android:layout_height="1dp"
+        android:background="#fff0f2f2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/resetBtn"
+        android:layout_marginBottom="8dp"
+        tools:layout_editor_absoluteX="8dp" />
+
+
+    <Button
+        android:id="@+id/resetBtn"
+        android:layout_width="54dp"
+        android:layout_height="54dp"
+        android:layout_marginBottom="1dp"
+        android:background="@drawable/circle_btn_background"
+        android:drawableTop="@drawable/reset_button"
+        android:text="@string/reset"
+        android:textColor="#595b5b"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/button" />
+
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="54dp"
+        android:layout_height="54dp"
+        android:layout_marginBottom="1dp"
+        android:background="@drawable/circle_btn_background"
+        android:drawableTop="@drawable/start_button"
+        android:text="@string/start"
+        android:textColor="#595b5b"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/resetBtn"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toEndOf="@id/resetBtn" />
+
+</android.support.constraint.ConstraintLayout>
