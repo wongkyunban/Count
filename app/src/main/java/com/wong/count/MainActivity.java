@@ -1,7 +1,11 @@
 package com.wong.count;
 
 import android.app.AlertDialog;
+import android.content.ComponentName;
+import android.content.Intent;
+import android.content.ServiceConnection;
 import android.os.Handler;
+import android.os.IBinder;
 import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -34,10 +38,13 @@ public class MainActivity extends AppCompatActivity {
     private final static String NAME = "count";
     private final static String MOBILE = "mobile";
     private SharePreferencesHelper sp;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        //设置状态栏的顔色
+        getWindow().setStatusBarColor(getResources().getColor(R.color.green));
         //获取视图组件
         this.button = (Button)findViewById(R.id.button);
         this.dingBtn = (Button)findViewById(R.id.dingBtn);
@@ -52,6 +59,7 @@ public class MainActivity extends AppCompatActivity {
         this.sp.putValue(NAME,0);
         //初始文本值
         this.textView.setText(String.valueOf(this.sp.getValue(NAME)));
+
 
         //打卡按钮事件
         this.dingBtn.setOnClickListener(new View.OnClickListener() {
@@ -118,6 +126,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 String indicator = MainActivity.this.button.getText().toString();
                 if(indicator.equalsIgnoreCase("开始")){
+
                     MainActivity.this.button.setText(getResources().getText(R.string.pause));
                     MainActivity.this.button.setCompoundDrawablesRelativeWithIntrinsicBounds(null,getResources().getDrawable(R.drawable.pause_button,null),null,null);
                     MainActivity.this.startTimer();
@@ -158,7 +167,7 @@ public class MainActivity extends AppCompatActivity {
     //使用Handler更新UI线程
     private static final int UPDATE_TIME = 1;
     //用来记录已过了的时间数
-    private int tenMSecs = 0;
+    private long tenMSecs = 0;
     //计时器
     private Timer timer = new Timer();
     private TimerTask timerTask = null; //timer要通过调用timerTask实现计时
@@ -239,8 +248,8 @@ public class MainActivity extends AppCompatActivity {
         //取消计时
         this.timer.cancel();
     }
-    //连续点击两次退出程序
 
+    //连续点击两次退出程序
     private long firstTime = 0;
 
     @Override
